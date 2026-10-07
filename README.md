@@ -1,31 +1,33 @@
-# 💻 Compilador de Simple a SML
+Proyecto **Compilador de Simple a SML**.
 
-## Descripción
+La versión del proyecto implementa un compilador para el lenguaje Simple, capaz de analizar instrucciones, construir una tabla de símbolos, generar código SML y resolver referencias pendientes mediante una primera y segunda pasada.
 
-Este proyecto implementa un compilador para el lenguaje **Simple**.
+## Incluye
 
-El compilador recibe un programa escrito en lenguaje Simple y lo convierte a instrucciones en **SML (Simpletron Machine Language)**.
+- Lectura de programas escritos en lenguaje Simple.
+- Separación de instrucciones en tokens.
+- Manejo de números de línea.
+- Manejo de variables.
+- Manejo de constantes.
+- Construcción de tabla de símbolos.
+- Generación de instrucciones SML.
+- Primera pasada del compilador.
+- Segunda pasada del compilador.
+- Uso de un arreglo `flags` para referencias pendientes.
+- Resolución de saltos hacia líneas que todavía no han sido procesadas.
+- Conversión de expresiones infijas a postfijas.
+- Uso de una pila para evaluar expresiones.
+- Uso de posiciones temporales en memoria.
+- Soporte para los comandos `rem`, `input`, `print`, `let`, `goto`, `if` y `end`.
+- Generación de archivo `.sml` con el programa compilado.
 
-El proceso de compilación se realiza en dos etapas principales:
+## Tabla de símbolos
 
-1. Primera pasada.
-2. Segunda pasada.
+La tabla de símbolos almacena la información encontrada durante la compilación.
 
-Durante la primera pasada se construye la tabla de símbolos, se generan las instrucciones SML y se registran las referencias pendientes.
+Cada elemento contiene:
 
-Durante la segunda pasada se resuelven dichas referencias y se completa el código SML final.
-
-El flujo general del compilador es:
-
-```text
-Archivo Simple
-      ↓
-Primera pasada
-      ↓
-Tabla de símbolos
-      ↓
-Código SML provisional
-      ↓
-Segunda pasada
-      ↓
-Código SML completo
+```python
+symbol
+type
+location
