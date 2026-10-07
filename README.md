@@ -1,28 +1,31 @@
-Proyecto **Modificaciones al simulador de Simpletron**.
+# 💻 Compilador de Simple a SML
 
-La versión del proyecto amplía las capacidades de Simpletron mediante una memoria mayor, nuevas operaciones, manejo de cadenas, carga desde archivo y soporte inicial para valores decimales.
+## Descripción
 
-## Incluye
+Este proyecto implementa un compilador para el lenguaje **Simple**.
 
-- Memoria ampliada a 1000 posiciones.
-- Carga de programa desde archivo `programa.simp`.
-- Carga manual por teclado si el archivo no está disponible.
-- Adaptación del direccionamiento para posiciones de `000` a `999`.
-- Operación de módulo.
-- Operación de potencia.
-- Instrucción de nueva línea.
-- Entrada de cadenas.
-- Salida de cadenas.
-- Almacenamiento de caracteres mediante ASCII.
-- Entrada de valores decimales.
-- Salida de valores decimales.
-- Conservación de las operaciones originales de Simpletron.
-- Manejo de errores durante la ejecución.
-- Vaciado de registros y memoria al finalizar.
+El compilador recibe un programa escrito en lenguaje Simple y lo convierte a instrucciones en **SML (Simpletron Machine Language)**.
 
-## Memoria de 1000 posiciones
+El proceso de compilación se realiza en dos etapas principales:
 
-La memoria del simulador se amplió de 100 a 1000 posiciones:
+1. Primera pasada.
+2. Segunda pasada.
 
-```python
-memory = [0] * 1000
+Durante la primera pasada se construye la tabla de símbolos, se generan las instrucciones SML y se registran las referencias pendientes.
+
+Durante la segunda pasada se resuelven dichas referencias y se completa el código SML final.
+
+El flujo general del compilador es:
+
+```text
+Archivo Simple
+      ↓
+Primera pasada
+      ↓
+Tabla de símbolos
+      ↓
+Código SML provisional
+      ↓
+Segunda pasada
+      ↓
+Código SML completo
