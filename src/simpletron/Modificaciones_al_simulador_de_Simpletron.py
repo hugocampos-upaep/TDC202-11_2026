@@ -39,7 +39,8 @@ def cargar_teclado():
     global ancho, limite
     ancho = 1000
     limite = 1000
-    print("Carga manual. Escribe 9999 para terminar")
+    print("Introduce las instrucciones una por una")
+    print("Escribe 9999 para terminar la carga")
     posicion = 0
     while posicion < 1000:
         texto = input(str(posicion) + " ? ")
@@ -253,6 +254,7 @@ def vaciado_memoria():
 
 if __name__ == "__main__":
     reiniciar()
+    print("*** Bienvenido a Simpletron ***")
     opcion = input("1. Cargar archivo  2. Cargar por teclado: ")
     if opcion == "2":
         cargado = cargar_teclado()
