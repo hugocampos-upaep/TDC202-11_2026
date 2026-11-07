@@ -81,8 +81,6 @@ def cargar_archivo(nombre):
             archivo.close()
             return False
         valor = int(texto)
-        if valor == 9999 and ancho == 1000:
-            break
         if posicion >= limite or valor < -maximo or valor > maximo:
             print("Error: memoria llena o valor fuera de rango")
             archivo.close()
@@ -128,10 +126,15 @@ def escribir_cadena(posicion):
 def ejecutar_programa():
     global accumulator, instructionCounter, instructionRegister, operationCode, operand
     ejecutando = True
+    pasos = 0
     maximo = 99999
     if ancho == 100:
         maximo = 9999
     while ejecutando:
+        if pasos >= 100000:
+            print("Error: limite de instrucciones alcanzado")
+            break
+        pasos = pasos + 1
         if instructionCounter < 0 or instructionCounter >= limite:
             print("Error: direccion invalida")
             break
@@ -245,11 +248,12 @@ def vaciado_memoria():
     print("operationCode:", operationCode)
     print("operand:", operand)
     print("MEMORIA")
+    print("      0        1        2        3        4        5        6        7        8        9")
     for fila in range(100):
         print(str(fila * 10).zfill(3), end=": ")
         for columna in range(10):
             posicion = fila * 10 + columna
-            print(memory[posicion], end=" ")
+            print(str(memory[posicion]).rjust(7), end="  ")
         print()
 
 if __name__ == "__main__":
