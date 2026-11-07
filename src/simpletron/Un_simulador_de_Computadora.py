@@ -43,7 +43,6 @@ def es_entero(texto):
 def cargar_teclado():
     reiniciar()
 
-    print("*** Bienvenido a Simpletron ***")
     print("Introduce las instrucciones una por una")
     print("Escribe 9999 para terminar la carga")
 
@@ -120,8 +119,13 @@ def ejecutar_programa():
     global accumulator, instructionCounter, instructionRegister, operationCode, operand
 
     ejecutando = True
+    pasos = 0
 
     while ejecutando:
+        if pasos >= 100000:
+            print("Error: limite de instrucciones alcanzado")
+            break
+        pasos = pasos + 1
         if instructionCounter < 0 or instructionCounter >= 100:
             print("Error: direccion de instruccion invalida")
             break
@@ -231,6 +235,7 @@ def vaciado_memoria():
 
 if __name__ == "__main__":
     reiniciar()
+    print("*** Bienvenido a Simpletron ***")
     opcion = input("1. Cargar archivo  2. Cargar por teclado: ")
     if opcion == "2":
         cargado = cargar_teclado()
