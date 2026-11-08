@@ -1,6 +1,6 @@
 # Un simulador de Computadora - Simpletron
 
-⚠️ LEER EL README COMPLETO PARA NO TENER PROBLEMAS DE EJECUCIÓN ⚠️
+⚠️ **LEER EL README COMPLETO PARA NO TENER PROBLEMAS DE EJECUCIÓN**⚠️
 
 Proyecto **Un simulador de Computadora - Simpletron**, desarrollado en **Python**.
 
