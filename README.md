@@ -1,6 +1,6 @@
 # Un simulador de Computadora - Simpletron
 
-# ⚠️ LEER EL README COMPLETO PARA NO TENER PROBLEMAS DE EJECUCIÓN ⚠️
+⚠️ LEER EL README COMPLETO PARA NO TENER PROBLEMAS DE EJECUCIÓN ⚠️
 Proyecto **Un simulador de Computadora - Simpletron**, desarrollado en **Python**.
 
 El proyecto incluye un simulador de computadora que ejecuta instrucciones en lenguaje **SML**, una versión con modificaciones, un evaluador de expresiones aritméticas y un compilador del lenguaje **Simple** a **SML**.
