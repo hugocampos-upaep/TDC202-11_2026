@@ -271,4 +271,4 @@ Esto permite comprobar que el compilador genera instrucciones ejecutables en Sim
 Para consultar las características y el funcionamiento interno del proyecto, revisar los siguientes documentos:
 
 - [Requerimientos del proyecto](docs/requerimientos.md)
-- [Diseño del proyecto](docs/diseno.md)
+- [Diseño del proyecto](docs/diseño.md)
