@@ -1,35 +1,17 @@
 # Un simulador de Computadora - Simpletron
 
+# ⚠️ LEER EL README COMPLETO PARA NO TENER PROBLEMAS DE EJECUCIÓN ⚠️
 Proyecto **Un simulador de Computadora - Simpletron**, desarrollado en **Python**.
 
-Este proyecto incluye la implementación del simulador original, las modificaciones al simulador, la evaluación de expresiones aritméticas y un compilador del lenguaje **Simple** a **SML**.
+El proyecto incluye un simulador de computadora que ejecuta instrucciones en lenguaje **SML**, una versión con modificaciones, un evaluador de expresiones aritméticas y un compilador del lenguaje **Simple** a **SML**.
 
-## Incluye
+## Contenido
 
-- Simulador original con memoria de **100 posiciones**.
-- Simulador modificado con memoria de **1000 posiciones**.
-- Inicialización de los registros:
-  - `accumulator`
-  - `instructionCounter`
-  - `instructionRegister`
-  - `operationCode`
-  - `operand`
-- Implementación de las **12 instrucciones originales SML**.
-- Carga de instrucciones desde teclado o archivo.
-- Uso de `9999` para finalizar la carga manual.
-- Ciclo de búsqueda, decodificación y ejecución.
-- Transferencias de control.
-- Manejo de errores fatales.
-- Vaciado de registros y memoria.
-- Nuevas instrucciones SML: módulo, potencia, cadenas, decimales y salto de línea.
-- Validación de símbolos de agrupación.
-- Conversión de expresiones infijas a postfijas.
-- Evaluación de expresiones postfijas.
-- Reconocimiento del lenguaje Simple.
-- Compilador de dos pasadas.
-- Tabla de símbolos y resolución de referencias pendientes.
-- Generación de código SML ejecutable.
-- Programas de prueba en Simple y SML.
+- **Simulador original:** ejecuta las 12 instrucciones originales SML.
+- **Simulador modificado:** incorpora memoria extendida y nuevas instrucciones.
+- **Evaluador de expresiones:** convierte y evalúa expresiones aritméticas.
+- **Compilador:** traduce programas escritos en Simple a instrucciones SML.
+- **Programas de prueba:** permiten comprobar el funcionamiento de los componentes.
 
 ## Estructura del proyecto
 
@@ -44,57 +26,88 @@ TDC202-11_2026--Simpletron-FINAL/
 │   │   └── expresiones.py
 │   └── compilador/
 │       └── compilador.py
-└── programas/
-    ├── simple/
-    │   ├── secuencia.simple
-    │   ├── seleccion.simple
-    │   └── repeticion.simple
-    └── sml/
-        ├── secuencia.sml
-        ├── seleccion.sml
-        ├── repeticion.sml
-        ├── Mod_Potencia.simp
-        └── Cadenas_Decimales.simp
+├── programas/
+│   ├── simple/
+│   │   ├── secuencia.simple
+│   │   ├── seleccion.simple
+│   │   └── repeticion.simple
+│   └── sml/
+│       ├── secuencia.sml
+│       ├── seleccion.sml
+│       ├── repeticion.sml
+│       ├── Mod_Potencia.simp
+│       └── Cadenas_Decimales.simp
+└── docs/
+    ├── requerimientos.md
+    └── diseno.md
 ```
 
 ## Cómo descargar el proyecto
 
-1. Entrar al repositorio: https://github.com/hugocampos-upaep/TDC202-11_2026
+1. Ingresar al repositorio: https://github.com/hugocampos-upaep/TDC202-11_2026
 2. Seleccionar la rama **💻Simpletron-FINAL**.
 3. Localizar el botón verde **Code**.
-4. Hacer clic sobre el botón **Code**.
-5. Seleccionar la opción **Download ZIP**.
-6. Esperar a que termine la descarga.
+4. Hacer clic sobre **Code**.
+5. Seleccionar **Download ZIP**.
+6. Esperar a que finalice la descarga.
 7. Abrir la carpeta de **Descargas**.
-8. Hacer clic derecho sobre el archivo ZIP.
+8. Hacer clic derecho sobre el ZIP descargado.
 9. Seleccionar **Extraer todo**.
 10. Abrir **Visual Studio Code**.
 11. Seleccionar **Archivo > Abrir carpeta**.
-12. Abrir la carpeta interna `TDC202-11_2026--Simpletron-FINAL`, que contiene `src`, `programas` y `README.md`.
-13. Seleccionar **Terminal > Nueva terminal**.
+12. Abrir la carpeta interna `TDC202-11_2026--Simpletron-FINAL`.
+13. Verificar que dicha carpeta contenga `src`, `programas` y `README.md`.
+14. Seleccionar **Terminal > Nueva terminal**.
 
-**Importante:** Todos los comandos siguientes deben ejecutarse desde la carpeta principal del proyecto, donde se encuentran `src`, `programas` y `README.md`.
+**Importante:** Todos los comandos deben ejecutarse desde la carpeta principal del proyecto, donde se encuentran `src`, `programas` y `README.md`.
 
-## Funcionamiento del simulador original
+Los siguientes ejemplos utilizan el comando `py` en Windows. Si el equipo reconoce `python` en lugar de `py`, puede utilizarse ese comando.
 
-En la terminal de **Visual Studio Code**, ejecutar el siguiente comando:
+## 1. Ejecutar el simulador original
+
+En la terminal de **Visual Studio Code**, ejecutar:
 
 ```powershell
 py src/simpletron/Un_simulador_de_Computadora.py
 ```
 
-Al iniciar, aparecerá:
+Aparecerá el siguiente menú:
 
 ```text
 *** Bienvenido a Simpletron ***
 1. Cargar archivo  2. Cargar por teclado:
 ```
 
-### Carga manual
+### Opción 1. Cargar desde archivo
 
-Seleccionar la opción `2`.
+1. Seleccionar la opción `1`.
+2. Introducir la siguiente ruta:
 
-El programa solicitará las instrucciones una por una:
+```text
+programas/sml/secuencia.sml
+```
+
+3. Cuando el programa solicite los datos, introducir `4` y después `5`.
+
+**Salida numérica esperada:**
+
+```text
+18
+9
+```
+
+Al finalizar, el simulador mostrará los registros y el vaciado de memoria.
+
+También pueden ejecutarse:
+
+- `programas/sml/seleccion.sml`
+- `programas/sml/repeticion.sml`
+
+### Opción 2. Cargar por teclado
+
+1. Ejecutar nuevamente el simulador.
+2. Seleccionar la opción `2`.
+3. Introducir las instrucciones:
 
 ```text
 00 ? 1090
@@ -103,9 +116,9 @@ El programa solicitará las instrucciones una por una:
 03 ? 9999
 ```
 
-El valor `9999` indica que terminó la carga manual de instrucciones.
+El valor `9999` finaliza la carga manual.
 
-**Importante:** Después de introducir `9999`, el simulador comienza a ejecutar el programa. Si encuentra una instrucción `READ`, aparecerá otro signo `?` solicitando un número entero.
+**Importante:** Después de introducir `9999`, el simulador comienza a ejecutar las instrucciones. Si aparece otro signo `?`, se debe introducir un número entero.
 
 Por ejemplo:
 
@@ -115,43 +128,11 @@ Por ejemplo:
 Terminó la ejecución de Simpletron
 ```
 
-Posteriormente se mostrarán los registros y el vaciado de memoria.
+Después se mostrarán los registros y la memoria.
 
-### Carga desde archivo
+## 2. Ejecutar el simulador modificado
 
-1. Ejecutar nuevamente el simulador.
-2. Seleccionar la opción `1`.
-3. Introducir la siguiente ruta:
-
-```text
-programas/sml/secuencia.sml
-```
-
-4. Introducir los números `4` y `5` cuando se soliciten.
-
-**Salida numérica esperada:**
-
-```text
-18
-9
-```
-
-Al finalizar, el simulador mostrará los registros y el contenido de la memoria.
-
-### Otros programas SML
-
-También pueden ejecutarse:
-
-```text
-programas/sml/seleccion.sml
-programas/sml/repeticion.sml
-```
-
-Estos programas permiten demostrar estructuras de selección y repetición.
-
-## Funcionamiento del simulador modificado
-
-En la terminal de **Visual Studio Code**, ejecutar el siguiente comando:
+En la terminal de **Visual Studio Code**, ejecutar:
 
 ```powershell
 py src/simpletron/Modificaciones_al_simulador_de_Simpletron.py
@@ -173,7 +154,7 @@ programas/sml/Mod_Potencia.simp
 64
 ```
 
-Este programa demuestra las instrucciones de **módulo** y **potencia**.
+Este ejemplo demuestra las instrucciones de módulo y potencia.
 
 ### Prueba de cadenas y decimales
 
@@ -197,17 +178,15 @@ hola
 2.5
 ```
 
-El simulador modificado también puede ejecutar programas SML originales.
+## 3. Ejecutar el evaluador de expresiones
 
-## Funcionamiento del evaluador de expresiones
-
-En la terminal de **Visual Studio Code**, ejecutar el siguiente comando:
+En la terminal de **Visual Studio Code**, ejecutar:
 
 ```powershell
 py src/expresiones/expresiones.py
 ```
 
-Introducir la expresión:
+Introducir la siguiente expresión:
 
 ```text
 {2 + [3 * (4 + 1)]} ^ 2
@@ -221,17 +200,15 @@ Postfijo: 2 3 4 1 + * + 2 ^
 Resultado: 289
 ```
 
-El programa valida el anidamiento, comprueba los símbolos de agrupación, convierte la expresión a postfija y calcula su resultado.
+## 4. Ejecutar el compilador
 
-## Funcionamiento del compilador
-
-En la terminal de **Visual Studio Code**, ejecutar el siguiente comando:
+En la terminal de **Visual Studio Code**, ejecutar:
 
 ```powershell
 py -m src.compilador.compilador
 ```
 
-El compilador solicitará el archivo escrito en **Simple**.
+El programa solicitará el archivo escrito en lenguaje Simple.
 
 Introducir:
 
@@ -239,7 +216,7 @@ Introducir:
 programas/simple/secuencia.simple
 ```
 
-Posteriormente, solicitará el nombre del archivo **SML** que se generará.
+Posteriormente, solicitará el nombre del archivo SML que se generará.
 
 Introducir:
 
@@ -247,15 +224,9 @@ Introducir:
 programas/sml/prueba_compilada.sml
 ```
 
-El compilador realizará:
+El compilador procesará el programa y creará el archivo `prueba_compilada.sml` en la carpeta `programas/sml/`.
 
-1. **Primera pasada:** lectura del programa y construcción de la tabla de símbolos.
-2. **Segunda pasada:** resolución de referencias pendientes.
-3. **Generación:** creación del archivo SML ejecutable.
-
-El archivo `prueba_compilada.sml` se creará al finalizar la compilación.
-
-### Ejecutar el archivo compilado
+### Ejecutar el programa compilado
 
 En la terminal de **Visual Studio Code**, ejecutar:
 
@@ -279,24 +250,24 @@ programas/sml/prueba_compilada.sml
 9
 ```
 
-Esto demuestra que el compilador genera instrucciones SML ejecutables por el simulador.
+Esto permite comprobar que el compilador genera instrucciones ejecutables en Simpletron.
 
 ## Programas de prueba
-
-Los programas de prueba se encuentran en las carpetas:
-
-- `programas/simple/`: programas escritos en lenguaje Simple.
-- `programas/sml/`: programas escritos en lenguaje SML y ejemplos de modificaciones.
 
 | Programa | Función |
 |---|---|
 | `secuencia.simple` | Ejecución secuencial |
 | `seleccion.simple` | Selección y condiciones |
-| `repeticion.simple` | Repetición y ciclos |
-| `secuencia.sml` | Ejecución secuencial en SML |
+| `repeticion.simple` | Repetición |
+| `secuencia.sml` | Secuencia en SML |
 | `seleccion.sml` | Selección en SML |
 | `repeticion.sml` | Repetición en SML |
 | `Mod_Potencia.simp` | Módulo y potencia |
-| `Cadenas_Decimales.simp` | Cadenas y números decimales |
+| `Cadenas_Decimales.simp` | Cadenas y decimales |
 
-Los programas `.simple` pueden compilarse para generar sus equivalentes `.sml`, que posteriormente se ejecutan en Simpletron.
+## Documentación
+
+Para consultar las características y el funcionamiento interno del proyecto, revisar los siguientes documentos:
+
+- [Requerimientos del proyecto](docs/requerimientos.md)
+- [Diseño del proyecto](docs/diseno.md)
