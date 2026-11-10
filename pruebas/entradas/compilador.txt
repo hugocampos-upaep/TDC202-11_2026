@@ -1,0 +1,2 @@
+programas/simple/secuencia.simple
+programas/sml/prueba_compilada.sml
