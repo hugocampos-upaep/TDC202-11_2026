@@ -278,12 +278,6 @@ La carpeta `pruebas/` contiene:
 - **`entradas/`:** archivos `.txt` con los datos necesarios para ejecutar las pruebas.
 - **`salidas/`:** archivos `.txt` con los resultados esperados.
 
-Por ejemplo, para ejecutar una prueba utilizando su archivo de entrada desde PowerShell:
-
-```powershell
-Get-Content pruebas/entradas/secuencia.txt | py src/simpletron/Un_simulador_de_Computadora.py
-```
-
 ### Resultados esperados
 
 | Programa | Entradas | Salidas |
