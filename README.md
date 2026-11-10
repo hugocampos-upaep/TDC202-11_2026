@@ -47,13 +47,7 @@ TDC202-11_2026--Simpletron-FINAL/
     └── diseño.md
 ```
 
-## Requisitos
-
-- **Python 3** instalado.
-- **Visual Studio Code** o una terminal de Windows.
-- No se requieren bibliotecas externas adicionales.
-
-## Instalación y apertura del proyecto
+## Descarga y apertura del proyecto
 
 1. Ingresar al [repositorio de GitHub](https://github.com/hugocampos-upaep/TDC202-11_2026).
 2. Seleccionar la rama **💻Simpletron-FINAL**.
