@@ -1,0 +1,8 @@
+COMPILADOR SIMPLE A SML
+
+TABLA DE SIMBOLOS
+INSTRUCCIONES PROVISIONALES
+FLAGS PENDIENTES
+CODIGO SML FINAL
+
+Archivo programas/sml/prueba_compilada.sml creado correctamente
