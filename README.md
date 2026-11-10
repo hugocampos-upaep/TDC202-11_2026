@@ -78,8 +78,6 @@ TDC202-11_2026--Simpletron-FINAL/       ← NO ABRIR ESTA
 
 Para comprobar que se abrió correctamente, verificar que `README.md`, `src/` y `programas/` aparezcan directamente dentro de ella.
 
-**Nota:** Los ejemplos utilizan `py` en Windows. Si el equipo reconoce `python` en su lugar, puede utilizarse ese comando.
-
 ---
 
 ## 1. Ejecutar el simulador original
